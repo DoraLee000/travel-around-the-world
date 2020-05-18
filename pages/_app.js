@@ -9,6 +9,9 @@ import createStore from '../store/store';
 // Layout
 import Layout from '../components/Common';
 
+//
+import '../assets/main.less';
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     return {

@@ -1,11 +1,11 @@
 import React from 'react';
 
+import { Button } from 'antd';
 class Layout extends React.Component {
   render() {
     const { children } = this.props;
     return (
       <div>
-        <h1>TEST</h1>
         <div className="layout">{children}</div>
       </div>
     );
