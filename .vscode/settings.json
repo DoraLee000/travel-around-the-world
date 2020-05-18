@@ -1,0 +1,18 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.printWidth": 100,
+    "prettier.semi": true,
+    "prettier.trailingComma": "es5",
+    "git.ignoreLimitWarning": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "editor.detectIndentation ": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": false
+    },
+    "todohighlight.keywords": ["@todo"],
+    "todo-tree.general.tags": ["TODO", "FIXME", "@todo"],
+    "todo-tree.regex.regex": "((.*\\*)|(//) )\\s*($TAGS).*(\\n\\s*(//|/\\*|\\*\\*)\\s{2,}.*)*",
+    "todo-tree.filtering.excludedWorkspaces": ["node_modules", "dist"]
+}
