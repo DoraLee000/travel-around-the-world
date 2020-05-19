@@ -20,13 +20,13 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps, store, router } = this.props;
 
     return (
       <Container>
         <Provider store={store}>
           <Layout>
-            <Component {...pageProps} />
+            <Component {...pageProps} router={router} />
           </Layout>
         </Provider>
       </Container>

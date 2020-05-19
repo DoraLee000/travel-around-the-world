@@ -1,49 +1,33 @@
-import Link from 'next/link';
-import { Component } from 'react';
-import { Button } from 'antd';
-import fetch from 'isomorphic-unfetch';
+import React from 'react';
 import { connect } from 'react-redux';
-import { increment, decrement, reset } from '../../store/actions';
+import Link from 'next/link';
+import { Button } from 'antd';
 
-class About extends Component {
-  increment = () => {
-    this.props.dispatch(increment());
-  };
+const About = ({ count, decrement, increment, reset }) => {
+  return (
+    <div>
+      測試saga / redux {count}
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Button onClick={decrement}>-</Button>
+      <Button onClick={increment}>+</Button>
+      <Button onClick={reset}>龜0</Button>
+    </div>
+  );
+};
 
-  decrement = () => {
-    this.props.dispatch(decrement());
-  };
-
-  reset = () => {
-    this.props.dispatch(reset());
-  };
-  render() {
-    const { count } = this.props;
-    return (
-      <div>
-        測試saga / redux
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <div>{count}</div>
-        <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.increment}>+</Button>
-      </div>
-    );
-  }
-}
-
-//測試
-
-// About.getInitialProps = async (ctx) => {
-//   const { store } = ctx;
-//   const { dispatch, getState } = store;
-//   increase: () => dispatch(increase()),
-//   decrease: () => dispatch(decrease())
-//   return store;
-//   // console.log('store', store.dispatch);
-// };
-
+// 因為在 _app.js Provider store={store}
+// 解構 reducer 取 data
 const mapStateToProps = ({ count }) => ({ count });
 
-export default connect(mapStateToProps)(About);
+// 解構 actions
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch({ type: 'INCREMENT' }),
+    decrement: () => dispatch({ type: 'DECREMENT' }),
+    reset: () => dispatch({ type: 'RESET' }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
