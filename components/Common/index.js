@@ -1,15 +1,22 @@
 import React from 'react';
+import Footer from '../Common/Footer';
+import Header from '../Common/Header';
 
-import { Button } from 'antd';
-class Layout extends React.Component {
+import { Layout } from 'antd';
+
+const { Content } = Layout;
+
+class LayoutModule extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div>
-        <div className="layout">{children}</div>
-      </div>
+      <Layout>
+        <Header />
+        <Content style={{ padding: '0 50px', marginTop: 64 }}>{children}</Content>
+        <Footer />
+      </Layout>
     );
   }
 }
 
-export default Layout;
+export default LayoutModule;

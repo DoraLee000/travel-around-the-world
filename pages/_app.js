@@ -9,10 +9,8 @@ import createStore from '../store/store';
 // Layout
 import Layout from '../components/Common';
 
-//
+// 引用樣式到全域
 import '../assets/main.less';
-
-//因為使用antd打包會包錯,要引入這一行
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
