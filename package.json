@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "node server/app.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 5656"
   },
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
