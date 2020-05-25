@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+import CardComponent from '../components/Home/CardList';
+import { loadData } from '../store/actions';
 
 const Home = props => {
   return (
@@ -9,9 +11,7 @@ const Home = props => {
         <a className="QQ">About</a>
       </Link>
       <div>
-        <Link href="/Blog">
-          <a>Blog</a>
-        </Link>
+        <CardComponent />
       </div>
     </div>
   );
@@ -19,7 +19,7 @@ const Home = props => {
 
 Home.getInitialProps = async ctx => {
   const { store } = ctx;
-  console.log(store);
+  store.dispatch(loadData());
 };
 
 export default Home;

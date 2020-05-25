@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Carousel } from 'antd';
 const { Header } = Layout;
 
-// const [color, setColor] = useState('blue');
-
 export default () => {
-  const [color, setColor] = useState('blue');
-  const changeColor = () => {
-    setColor(color == 'blue' ? 'red' : 'blue');
-    console.log('~~');
-  };
+  // const [color, setColor] = useState('blue');
+  // const changeColor = () => {
+  //   setColor(color == 'blue' ? 'red' : 'blue');
+  //   console.log('~~');
+  // };
   return (
     <>
       <Header className="header">
@@ -19,15 +17,12 @@ export default () => {
           <Menu.Item key="2">nav 2</Menu.Item>
           <Menu.Item key="3">nav 3</Menu.Item>
         </Menu>
-        <div>
-          <button onClick={changeColor}>測試Hook改變顏色&部屬</button>
-        </div>
       </Header>
       <style jsx="true">
         {`
         .header,.header-menu {
           background-color: #FFF;
-          color:${color}
+          color:#FFF
         }
         .header {
           position: 'fixed',

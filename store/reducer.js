@@ -1,9 +1,9 @@
 import { actionTypes } from './actions';
 
 export const exampleInitialState = {
-  count: 0,
+  count: 1,
   error: false,
-  placeholderData: null,
+  dataList: null,
 };
 
 function reducer(state = exampleInitialState, action) {
@@ -29,7 +29,7 @@ function reducer(state = exampleInitialState, action) {
     case actionTypes.LOAD_DATA_SUCCESS:
       return {
         ...state,
-        ...{ placeholderData: action.data },
+        ...{ dataList: action.data },
       };
 
     default:
